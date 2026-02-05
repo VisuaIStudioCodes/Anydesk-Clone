@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anydesk Clone - Demo</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f5f7fb;
+        --card: #ffffff;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --accent: #ef4444;
+        --border: #e5e7eb;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      header {
+        background: var(--card);
+        border-bottom: 1px solid var(--border);
+        padding: 1.5rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      header .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .logo-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #ff6b6b, #ef4444);
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      header nav {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      header nav a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      header nav a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 3rem 2rem 1rem;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 3vw, 3rem);
+        margin-bottom: 0.75rem;
+      }
+
+      .hero p {
+        margin: 0 0 1.5rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .hero .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .button {
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 999px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--accent);
+        border: 1px solid var(--accent);
+      }
+
+      .card-grid {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        padding: 1rem 2rem 3rem;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 1.5rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      }
+
+      .card h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .status {
+        padding: 0 2rem 3rem;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .status .panel {
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 1.25rem 1.5rem;
+        border-radius: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .badge {
+        background: rgba(239, 68, 68, 0.1);
+        color: var(--accent);
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      footer {
+        padding: 2rem;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <div class="logo-mark">A</div>
+        Anydesk Clone
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#sessions">Sessions</a>
+        <a href="#status">Status</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Fast remote access for teams and friends.</h1>
+        <p>
+          This HTML prototype captures the look and feel of an Anydesk-style remote desktop
+          client. Use it as a starting point for wiring in streaming, chat, and device
+          authentication.
+        </p>
+        <div class="cta">
+          <button class="button primary">Start New Session</button>
+          <button class="button secondary">Join With Code</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Session Preview</h3>
+        <p>Live feed placeholder for remote desktop streaming.</p>
+        <div class="card-grid" style="padding: 1.25rem 0 0; grid-template-columns: 1fr 1fr;">
+          <div class="card" style="padding: 1rem;">
+            <strong>Latency</strong>
+            <p>36 ms</p>
+          </div>
+          <div class="card" style="padding: 1rem;">
+            <strong>Bandwidth</strong>
+            <p>8.4 Mbps</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="card-grid">
+      <div class="card">
+        <h3>Instant Access</h3>
+        <p>One-click connection flow with auto-generated codes.</p>
+      </div>
+      <div class="card">
+        <h3>Secure Handshake</h3>
+        <p>Pluggable auth and encryption layers for production use.</p>
+      </div>
+      <div class="card">
+        <h3>Multi-Device</h3>
+        <p>Responsive layout ready for desktop and tablet experiences.</p>
+      </div>
+    </section>
+
+    <section id="status" class="status">
+      <div class="panel">
+        <div>
+          <h3 style="margin: 0 0 0.5rem;">Current Status</h3>
+          <p style="margin: 0; color: var(--muted);">
+            Waiting for WebRTC wiring and device pairing.
+          </p>
+        </div>
+        <span class="badge">Prototype</span>
+      </div>
+      <div id="sessions" class="panel">
+        <div>
+          <h3 style="margin: 0 0 0.5rem;">Recent Sessions</h3>
+          <p style="margin: 0; color: var(--muted);">No sessions yet. Start a new one!</p>
+        </div>
+        <button class="button primary">Generate Code</button>
+      </div>
+    </section>
+
+    <footer>
+      Built for the Anydesk Clone project · Update this template with your real-time engine.
+    </footer>
+  </body>
+</html>
